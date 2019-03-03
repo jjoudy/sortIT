@@ -61,7 +61,7 @@ function doPredict(value) {
       var tagCount = 0;
       var modelName = response.rawData.outputs[0].model.name;
       var modelNameShort = modelName.split("-")[0];
-      var modelHeader = '<b><span style="font-size:14px">' + capitalize(modelNameShort) + ' Model</span></b>';
+      var modelHeader = '<b><span style="font-size:14px">' + capitalize(modelNameShort) + ' Model, with Prediction Accuracy Percentages:</span></b>';
       
       // Check for regions models first
       if(response.rawData.outputs[0].data.hasOwnProperty("regions")) {
@@ -166,7 +166,7 @@ function doPredict(value) {
         tagArray = response.rawData.outputs[0].data.concepts;
         
         for (var other = 0; other < tagArray.length; other++) {
-          conceptNames += '<li>' + tagArray[other].name + ': <i>' + tagArray[other].value + '</i></li>';
+          conceptNames += '<li>' + tagArray[other].name + ': <i>' + tagArray[other].value*100 + '%</i></li>';
         }
         
         tagCount=tagArray.length;

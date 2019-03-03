@@ -118,7 +118,30 @@
 		border-radius: 4px;
 	}
 	
+	.upload-btn-wrapper {
+		position: relative;
+		overflow: hidden;
+		display: inline-block;
+	}
 
+	.btn {
+		padding: 2px 20px;
+		background-color: #f9f2dc; 
+		color: black; 
+		border: 2px solid #ffcdd2;
+		border-radius: 4px;
+	}
+	
+
+	.upload-btn-wrapper input[type=file] {
+		font-size: 100px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0;
+	}
+	
+	
 
   </style>
 </head>
@@ -129,9 +152,6 @@
   <input type="hidden" id="hidden-counter" name="hidden-counter" value="1"/>
   <form action="" style="font-size:16px; margin-bottom:25px; float:left; margin-right:40px">
 	<input type="radio" name="model" value="custom" checked="checked"> SortIt &nbsp;<select id="custom_models_dropdown"></select><br>
-    <input type="radio" name="model" value="general" > General<br>
-    <input type="radio" name="model" value="food"> Food<br>
-    <input type="radio" name="model" value="texturespatterns"> Textures & Patterns<br>
   </form>
   <div style="float:left">
     <button class="button button1" onclick="
@@ -163,8 +183,11 @@
       }
       predict_click($('#filename').val(), 'file');">Sort An Uploaded Image</button>
     
-    <input type="file" id="filename" placeholder="Filename" size="80"/>
-  </div>
+    <div class="upload-btn-wrapper">
+		<button class="btn">Upload a file</button>
+		<input type="file" id="filename" placeholder="Filename" size="80"/>
+		</div>
+	</div>
   
   <div id="predictions">
     <div style="margin-top:30px; margin-left:20px; margin-bottom:30px; clear:left; float:left">
