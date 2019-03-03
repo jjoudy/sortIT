@@ -100,7 +100,7 @@
 	}
 	
 	.button1 {
-		background-color: white; 
+		background-color: #f9f2dc; 
 		color: black; 
 		border: 2px solid #ffcdd2;
 		border-radius: 4px;
@@ -153,12 +153,12 @@
     
     <button class="button button1" onclick="
       if(filename.value == '') { 
-        alert('Please browse for a file!'); 
+        alert('Please choose a file!'); 
         return;
       } 
     
       else if (!validFile(filename.value)) {
-        alert('Supported File Types: JPEG, PNG, TIFF, BMP');
+        alert('Please choose a supported file type: JPEG, PNG, TIFF, BMP');
         return;
       }
       predict_click($('#filename').val(), 'file');">Sort An Uploaded Image</button>
