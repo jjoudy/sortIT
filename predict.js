@@ -165,7 +165,7 @@ function doPredict(value) {
       else if(response.rawData.outputs[0].data.hasOwnProperty("concepts")) {
         tagArray = response.rawData.outputs[0].data.concepts;
         
-        for (var other = 0; other < tagArray.length; other++) {
+        for (var other = 0; other < 5; other++) {
           conceptNames += '<li>' + tagArray[other].name + ': <i>' + tagArray[other].value*100 + '%</i></li>';
         }
         
